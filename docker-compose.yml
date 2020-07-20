@@ -1,34 +1,23 @@
-version: '2'
+version: '3'
 services:
   bootstrap:
-    image: chtboot
+    image: chttl.azurecr.io/chtboot
     restart: on-failure
     container_name: bootstrap
     hostname: bootstrap
     entrypoint: /root/start.sh
     ports:
-      - "30303:30303"
-      - "30303:30303/udp"
-      - "8545:8545"
+      - "80:8545"
   eth:
-    image: chtnode
+    image: chttl.azurecr.io/chtnode
     restart: on-failure
-    links:
-      - bootstrap
-
   eth2:
-    image: chtnode
+    image: chttl.azurecr.io/chtnode
     restart: on-failure
-    links:
-      - bootstrap
-
   eth3:
-    image: chtnode
+    image: chttl.azurecr.io/chtnode
     restart: on-failure
-    links:
-      - bootstrap
   eth4:
-    image: chtnode
+    image: chttl.azurecr.io/chtnode
     restart: on-failure
-    links:
-      - bootstrap
+
