@@ -8,5 +8,8 @@ ADD start.sh /root/start.sh
 ADD boot.key /root/boot.key
 RUN chmod +x /root/start.sh
 ADD keystore /root/keystore
+ADD genesis.json /root/genesis.json
+ADD password /root/password
 
 ENTRYPOINT /root/start.sh
+EXPOSE 8545

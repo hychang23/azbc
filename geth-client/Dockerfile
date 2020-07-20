@@ -7,5 +7,5 @@ ENV HTTP_PROXY ""
 ADD start.sh /root/start.sh
 RUN chmod +x /root/start.sh
 ADD keystore /root/keystore
-
+ADD genesis.json /root/genesis.json
 ENTRYPOINT /root/start.sh
